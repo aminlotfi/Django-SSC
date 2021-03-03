@@ -23,3 +23,8 @@
     width: 100%;
     padding: 6px;
 }
+
+.login-error {
+    font-family: Parastoo;
+    color: #e74c3c;
+}

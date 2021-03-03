@@ -10,7 +10,8 @@
 
 {% block content %}
         <div class="form-container">
-        <form action="" id="register_form" class="form" method="POST">
+        <form action="{% url 'login' %}" id="register_form" class="form" method="POST">
+            {% csrf_token %}
             <h2>ورود</h2>
             <div class="form-control-input">
                 <label for="username">نام کاربری</label>
@@ -18,9 +19,11 @@
             </div>
             <div class="form-control-input">
                 <label for="password">رمز</label>
-                <input type="password" id="password" name="password1" placeholder="رمز را وارد کنید"/>
+                <input type="password" id="password" name="password" placeholder="رمز را وارد کنید"/>
             </div>
-
+            {% if error %}
+            <div id="errors" class="login-error">نام کاربری یا رمز عبور اشتباه است</div>
+            {% endif %}
             <button type="submit" name="submit">ورود</button>
         </form>
     </div>

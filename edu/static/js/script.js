@@ -72,11 +72,11 @@ function getFieldName(input) {
 
 // Event listeners
 form.addEventListener('submit', function(e) {
-  e.preventDefault();
-
   checkRequired([first_name, last_name, username, email, password, password2]);
   checkLength(username, 3, 20);
   checkLength(password, 6, 25);
   checkEmail(email);
   checkPasswordsMatch(password, password2);
+
+  form.submit();
 });

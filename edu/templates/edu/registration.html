@@ -9,7 +9,8 @@
 
 {% block content %}
      <div class="form-container">
-        <form action="" id="register_form" class="form" method="POST">
+        <form action="{% url 'registration' %}" id="register_form" class="form" method="POST">
+            {% csrf_token %}
             <h2>ثبت نام</h2>
             <div class="form-inputs">
 
@@ -48,8 +49,6 @@
                     </div>
                 </div>
             </div>
-
-
             <button type="submit" name="submit">ثبت نام</button>
         </form>
     </div>
