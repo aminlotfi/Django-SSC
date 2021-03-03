@@ -1,0 +1,27 @@
+{% extends 'edu/base.html' %}
+{% block title %}
+    <title>سامانه انتخاب واحد|ورود</title>
+{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="../../static/css/registration.css">
+    <link rel="stylesheet" href="../../static/css/login.css">
+{% endblock %}
+
+{% block content %}
+        <div class="form-container">
+        <form action="" id="register_form" class="form" method="POST">
+            <h2>ورود</h2>
+            <div class="form-control-input">
+                <label for="username">نام کاربری</label>
+                <input type="text" id="username" name="username" placeholder="نام کاربری را وارد کنید"/>
+            </div>
+            <div class="form-control-input">
+                <label for="password">رمز</label>
+                <input type="password" id="password" name="password1" placeholder="رمز را وارد کنید"/>
+            </div>
+
+            <button type="submit" name="submit">ورود</button>
+        </form>
+    </div>
+{% endblock %}

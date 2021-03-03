@@ -1,0 +1,25 @@
+.form-container {
+    align-items: center;
+    justify-content: center;
+    font-family: ParastooBold;
+    height: 52vh;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    margin: 100px auto;
+}
+
+.form button {
+    font-family: Parastoo;
+    cursor: pointer;
+    background-color: #3498db;
+    border: 2px solid #3498db;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    font-size: 20px;
+    margin-top: 20px;
+    width: 100%;
+    padding: 6px;
+}
