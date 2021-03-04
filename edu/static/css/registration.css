@@ -136,4 +136,9 @@ h2 {
     font-family: Parastoo;
 }
 
-/***************************************/
+.register-error {
+    font-family: Parastoo;
+    color: #e74c3c;
+    display: block;
+    text-align: right;
+}

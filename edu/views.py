@@ -13,7 +13,7 @@ class Index(View):
 
 class Register(View):
     def get(self, request):
-        return render(request, 'edu/registration.html')
+        return render(request, 'edu/registration.html', {'access': request.user.is_authenticated, 'error': None})
 
     def post(self, request):
         data = {
@@ -23,9 +23,24 @@ class Register(View):
             'email': request.POST.get('email'),
             'password': make_password(request.POST.get('password1'))
         }
-        user = User(**data)
-        user.save()
-        return render(request, 'edu/index.html', {'access': False})
+
+        findUser = User.objects.filter(username=data['username'])
+        password1 = request.POST.get('password1')
+        password2 = request.POST.get('password2')
+        registerError = None
+
+        if findUser:
+            registerError = 'username'
+            
+        if password1 != password2:
+            registerError = 'password'
+
+        if registerError:
+            return render(request, 'edu/registration.html', {'error': registerError})
+        else:
+            user = User(**data)
+            user.save()
+            return render(request, 'edu/index.html', {'access': False})
 
 
 class Login(View):

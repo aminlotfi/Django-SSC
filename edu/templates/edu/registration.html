@@ -49,6 +49,11 @@
                     </div>
                 </div>
             </div>
+            {% if error == 'password' %}
+            <div id="errors" class="register-error">گذرواژه و تکرار گذرواژه یکسان نیستند</div>
+            {% elif error == 'username' %}
+            <div id="errors" class="register-error">نام کاربری شما در سیستم موجود است</div>
+            {% endif %}
             <button type="submit" name="submit">ثبت نام</button>
         </form>
     </div>
